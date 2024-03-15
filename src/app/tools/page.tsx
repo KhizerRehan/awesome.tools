@@ -33,7 +33,7 @@ function FrontendToolsPage() {
           <Card key={index} className="flex flex-col justify-between w-[12rem]">
             <CardHeader>
               <CardTitle className="py-2">
-                <h4>{tool.name}</h4>
+                <p className="text-[14px] font-bold">{tool.name}</p>
                 <div className="mt-2">{renderCategory(tool)}</div>
               </CardTitle>
               {tool.description && (
