@@ -19,5 +19,11 @@ jobs:
         run: vercel build --token=${{ secrets.AWESOME_TOOLS_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: |
-          deployment_url=$(vercel deploy --prebuilt --token=${{ secrets.AWESOME_TOOLS_TOKEN }} | grep -oP '(?<=Preview: )\S+')
-          echo "Deployment URL: $deployment_url"
+          deployment_output=$(vercel deploy --prebuilt --token=${{ secrets.AWESOME_TOOLS_TOKEN }} 2>&1)
+          deployment_url=$(echo "$deployment_output" | grep -oP '(?<=Preview: )\S+')
+          if [[ $? -eq 0 ]]; then
+            echo "Deployment URL: $deployment_url"
+          else
+            echo "Error deploying: $deployment_output"
+            exit 1
+          fi

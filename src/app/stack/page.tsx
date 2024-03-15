@@ -10,7 +10,10 @@ export default function Home() {
           <Link href={"https://ui.shadcn.com/"}>shadcn/ui</Link>
         </li>
         <li className=" text-sky-600 cursor-pointer">
-          <Link href={"https://tailwindcss.com//"}>tailwindcss</Link>
+          <Link href={"https://tailwindcss.com/"}>tailwindcss</Link>
+        </li>
+        <li className=" text-sky-600 cursor-pointer">
+          <Link href={"https://github.com/lukeed/clsx"}>npm: clsx</Link>
         </li>
       </ul>
     </main>
