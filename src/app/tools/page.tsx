@@ -7,25 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Catgeory, Tools } from "../../lib/data/tools.data";
+import { Tools } from "../../lib/data/tools.data";
 import Link from "next/link";
 
 function FrontendToolsPage() {
-  const renderCategory = (item: any) => {
-    switch (item.category) {
-      case Catgeory.Frontend:
-        return (
-          <span className="text-[12px] text-green-500">Category: Frontend</span>
-        );
-      case Catgeory.Backend:
-        return (
-          <span className="text-[12px] text-blue-500">Category: Backend</span>
-        );
-      default:
-        <span className="text-sm">Unknown</span>;
-    }
-  };
-
   return (
     <div className="flex px-4 py-10 gap-3">
       {Tools &&
@@ -34,7 +19,12 @@ function FrontendToolsPage() {
             <CardHeader>
               <CardTitle className="py-2">
                 <p className="text-[14px] font-bold">{tool.name}</p>
-                <div className="mt-2">{renderCategory(tool)}</div>
+                <div className="mt-3">
+                  <p className="text-[12px] text-blue-500">
+                    <span className=" text-slate-500">Category:</span>{" "}
+                    {tool.category ?? "Unknown"}
+                  </p>
+                </div>
               </CardTitle>
               {tool.description && (
                 <CardDescription className="text-[12px] pt-3">
