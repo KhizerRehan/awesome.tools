@@ -16,6 +16,13 @@ export default function Home() {
           <Link href={"https://github.com/lukeed/clsx"}>npm: clsx</Link>
         </li>
       </ul>
+
+      <br />
+
+      <summary>
+        Awesome Tools is deployed to{" "}
+        <span className=" text-2xl font-bold">Vercel</span>
+      </summary>
     </main>
   );
 }
