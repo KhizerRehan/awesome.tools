@@ -7,14 +7,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tools } from "../../lib/data/tools/tools.data";
 import Link from "next/link";
+import { CheatSheetData } from "@/lib/data/cheatsheet/cheatsheet.data";
 
 function FrontendToolsPage() {
   return (
     <div className="flex px-4 py-10 gap-3">
-      {Tools &&
-        Tools.map((item, index) => (
+      {CheatSheetData &&
+        CheatSheetData.map((item, index) => (
           <Card key={index} className="flex flex-col justify-between w-[12rem]">
             <CardHeader>
               <CardTitle className="py-2">
